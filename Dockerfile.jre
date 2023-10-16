@@ -1,0 +1,12 @@
+# From nvcr.io/nvidia/pytorch:23.07-py3
+From 763104351884.dkr.ecr.us-east-1.amazonaws.com/pytorch-training:1.13.1-gpu-py39-cu117-ubuntu20.04-sagemaker
+
+ENV LANG=C.UTF-8
+ENV PYTHONUNBUFFERED=TRUE
+ENV PYTHONDONTWRITEBYTECODE=TRUE
+
+RUN apt-get update
+RUN apt-get -y install default-jre
+
+## Make all local GPUs visible
+ENV NVIDIA_VISIBLE_DEVICES="all"
