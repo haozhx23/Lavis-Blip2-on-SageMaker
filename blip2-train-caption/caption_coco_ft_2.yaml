@@ -81,18 +81,18 @@ run:
 
   evaluate: False
   train_splits: ["train"]
-  # valid_splits: ["val"] #####
+  valid_splits: ["val"]
   test_splits: ["test"]
 
   device: "cuda"
-  world_size: 1
+  world_size: 8
   dist_url: "env://"
   distributed: True
   
   # report_metric: False
   
-env:
-  cache_root: "/tmp/lavis"
+# env:
+#   cache_root: "/tmp/lavis"
   
 
 # runner: runner_iter
