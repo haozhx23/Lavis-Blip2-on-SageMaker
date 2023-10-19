@@ -33,15 +33,12 @@ datasets:
       annotations:
         train:
           url: /tmp/sub_annos/coco_karpathy_train.json
-          # md5: aa31ac474cf6250ebb81d18348a07ed8
           storage: /tmp/sub_annos/coco_karpathy_train.json
         val:
           url: /tmp/sub_annos/coco_karpathy_val.json
-          # md5: b273847456ef5580e33713b1f7de52a0
           storage: /tmp/sub_annos/coco_karpathy_val.json
         test:
           url: /tmp/sub_annos/coco_karpathy_test.json
-          # md5: 3ff34b0ef2db02d01c37399f6a2a6cd1
           storage: /tmp/sub_annos/coco_karpathy_test.json
       images:
         storage: coco/images/
@@ -64,9 +61,9 @@ run:
   max_iters: 100
   iters_per_inner_epoch: 100
   ################
-  batch_size_train: 16
-  batch_size_eval: 8
-  num_workers: 4
+  batch_size_train: 2
+  batch_size_eval: 2
+  num_workers: 2
   accum_grad_iters: 1
 
   max_len: 30
@@ -81,13 +78,14 @@ run:
 
   evaluate: False
   train_splits: ["train"]
-  valid_splits: ["val"]
-  test_splits: ["test"]
+  # valid_splits: ["val"]
+  # test_splits: ["test"]
 
   device: "cuda"
-  world_size: 8
-  dist_url: "env://"
   distributed: True
+  dist_url: "env://"
+  # world_size: 8
+  
   
   # report_metric: False
   
